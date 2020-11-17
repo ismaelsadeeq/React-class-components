@@ -18,10 +18,11 @@ class Message extends Component {
   }
 
   render(){
+    const {message,tag} = this.state
     return  (
       <div>
-        <h1>{this.state.message}</h1>
-    <button onClick = {() => this.changeMessage()}>{this.state.tag}</button>
+        <h1>{message}</h1>
+    <button onClick = {() => this.changeMessage()}>{tag}</button>
       </div>
     
     );

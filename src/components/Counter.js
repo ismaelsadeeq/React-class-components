@@ -12,15 +12,21 @@ class Counter extends Component {
   };
 
   increment(){
-    this.setState({
-      count: this.state.count + 1
-    }, () => console.log(this.state.count));
+    // this.setState({
+    //   count: this.state.count + 1
+    // }, () => console.log(this.state.count));
+    this.setState(prevState => ({
+      count: prevState.count + 1
+    }))
+     console.log(this.state.count);
   }
-  incrementFive(prevState){
-    this.setState({
-      count: prevState + 1
-    },
-     () => console.log(prevState));
+  
+  incrementFive(){
+   this.increment();
+   this.increment();
+   this.increment();
+   this.increment();
+   this.increment();
   };
   
 
@@ -28,7 +34,7 @@ class Counter extends Component {
     return(
       <div>
         <p>count - {this.state.count}</p>
-        <button onClick ={() => this.incrementFive(this.state.count)}> Increment </button>
+        <button onClick ={() => this.incrementFive()}> Increment </button>
       </div>
     )
   };
