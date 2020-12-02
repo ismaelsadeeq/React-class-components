@@ -1,4 +1,5 @@
 import './App.css';
+import React, {Component} from 'react'
 import Greet from './components/Greet';
 import Welcome from './components/Welcome';
 import Message from './components/Message';
@@ -10,11 +11,19 @@ import Parent from './components/ParentComponent'
 import UserG from './components/UserGreeting'
 import List from './components/NameList'
 import Style from './components/Styleheets'
-function App() {
+import  './appStyles.css'
+import styles from './appStyles.module.css'
+import Form from './components/Form'
+
+class App extends Component {
+  render() {
   return (
     <div className="App">
-      {/* <List /> */}
-      <Style primary={true}/>
+      <Form />
+      {/* <h1 className='err'>Error</h1> */}
+      {/* <h1 className={styles.success}>success</h1> */}
+      {/* <List />
+      <Style primary={true}/> */}
       {/* <UserG /> */}
       {/* <EventB /> */}
       {/* <Parent /> */}
@@ -32,6 +41,7 @@ function App() {
 
     </div>
   );
+   }
 }
 
 export default App;
